@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.dark {
+    background-color:black;
+    color: white;
+}
+.card-body{
+   background-color: rgba(68, 65, 65, 0.575);
+   margin: auto;
+   margin-bottom: 20px;
+   border: 2px darkcyan dashed;
+   align-items: center;
+}
+@media (max-width:770px){
+    h3{
+        font-size: 90px !important;
+        
+    }
+    input{
+        
+        font-size: 60px !important;
+    }
+    .card-body{
+        width: 100%;
+    } 
+    select{
+        height: 30% !important;
+        font-size: 60px !important;
+    }
+    #createmp{
+        width: 100% !important;
+        font-size: 60px !important;
+    }
+    h4{
+        font-size: 70px !important;
+    }
+    #clearall
+    {
+        font-size: 60px !important;
+    }
+}
+table{
+    margin: auto;
+}
+table thead tr th{
+    padding: auto;
+    text-align: center;
+      font-size: 24px;
+    text-transform:uppercase;
+    color: darkcyan;
+   
+}
+tbody tr th{
+    text-align: center;
+    padding-bottom: 8px;
+}
+.none{
+    display: none;
+}
+.emptytask{
+    border: 2px red solid;
+    color: red;
+    margin-top: 10px;
+}
+.layout{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 162004;
+    background-color: rgba(233, 168, 156, 0.4);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+.layout .card{
+    background-color: black;
+    width: 40%;
+}
+.layout .card-body{
+    background-color: rgb(55, 52, 52);
+    color: aliceblue;
+    width: 90%;
+    text-align: center;
+   
+}
+@media (max-width:770px){
+    table thead tr th{
+        padding: 20px;
+        text-align: center;
+          font-size: 50px;
+        text-transform:uppercase;
+        color: darkcyan;
+       
+    }
+    tbody tr th{
+        text-align: center;
+        padding-bottom: 8px;
+        font-size: 40px;
+    }
+    .layout .card{
+       height: 90%;
+        width: 90%;
+    }
+    .layout .card-body{
+        background-color: rgb(55, 52, 52);
+        color: aliceblue;
+        width: 100%;
+        height: 90% !important;
+        text-align: center;
+      
+    }  
+    .layout .card-body h6{
+        font-size: 60px;
+    } 
+    .layout .btn-close{
+        font-size: 40px !important;
+    } 
+}

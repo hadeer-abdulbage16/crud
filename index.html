@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+   
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>title</title>
+  </head>
+  <body class="dark">
+   <h3 class=" text-center text-info  display-2 my-3">JSON CARD</h3> 
+   <div class="container col-md-9">
+     <div class="card dark">
+      <div class="card-body">
+       <div class="row">
+         <div class="form-group col-md-6 ">
+          <input id="EmployeName" placeholder="Employe name" type=" text" class="col-md-3 form-control">
+          <span id="span" class="none text-danger">
+            PLEASE ENTER DATA
+          </span>
+           </div>
+         <div class="form-group col-md-6 ">
+          <input id="Position" placeholder="Employe position" type=" text" class="col-md-3 form-control">
+          <span id="span" class="none text-danger">
+            PLEASE ENTER DATA
+          </span>
+           </div>
+       </div>
+       <hr>
+       <h4 class="text-center">Calc Employee Salary</h4>
+      <div class="row " id="inputsalary">
+       
+         
+          <div class="form-group col-md-2 ">
+            <input  placeholder="Gross" id="gross" type=" text" class="col-md-3 form-control">
+            <span id="span" class="none text-danger">
+              PLEASE ENTER DATA
+            </span>
+             </div>
+          <div class="form-group col-md-2 ">
+            <input  id="tax" placeholder="tax%" type=" text" class="col-md-3 form-control">
+            <span id="span" class="none text-danger">
+              PLEASE ENTER DATA
+            </span>
+             </div>
+          <div class="form-group col-md-3 ">
+            <input  id="trancost" placeholder="trancost" type=" text" class="col-md-3 form-control">
+            <span id="span" class="none text-danger">
+              PLEASE ENTER DATA
+            </span>
+          </div>
+          <div class="form-group col-md-2 ">
+           
+            <input  id="bouns" placeholder="bouns" type=" text" class="col-md-3 form-control">
+            <span id="span" class="none text-danger">
+              PLEASE ENTER DATA
+            </span>
+          </div>
+          <div class="form-group col-md-2 ">
+           
+            <input readonly  placeholder="total" type=" text" class="col-md-3 form-control">
+
+          </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="form-group col-md-6 ">
+          <div class="form-floating">
+            <select class="form-select form-control" id="floatingSelect" aria-label="Floating label select example">
+              <option selected disabled hidden  value=" ">select Department</option>
+              <option value="hr">hr</option>
+              <option value="sales">sales</option>
+              <option value="information system">information system</option>
+              <option value="Programmer">Programmer</option>
+            </select>
+          </div>
+          
+          
+          </div>
+         <div class="form-group col-md-6 col-sm-12">
+          <input type="number" id="count" placeholder="Count" class="form-control">
+          <span id="span" class="none text-danger">
+            PLEASE ENTER DATA
+          </span>
+         </div> 
+      </div>
+     <div class="col-md-12 col-sm-12">
+      <button id="createmp" class="btn btn-info my-5 col-md-12">Create new Employees</button>
+    
+      </div>
+     </div>
+   </div>
+
+   <div class="card-body col-md-9 col-sm-12">
+    <div class="  contanier ">
+      
+       <div id="emptytask" class="emptytask">
+          <h4 class="text-dengar  text-center">
+             NO ELEMANT YET
+          </h4>
+         
+       </div>
+        <table class="none col-sm-12" >
+          <div class="d-grid my-4">
+            <button id="clearall" class="btn btn-danger ">Clear All</button>
+          </div>
+          <thead  class="col-sm-12 mx-auto">
+            
+            <tr>
+             <th>id</th>
+              <th>Name</th>
+              <th>postion</th>
+              <th colspan="3">acction</th>
+              
+            </tr>
+          </thead>
+          <tbody id="tbody" class="tbody">
+            
+          </tbody>
+        </table>
+      
+       
+     </div>
+   </div>
+
+   <!--model to show data-->
+   <div id="layout" class="layout mx-auto ">
+    <div class="model">
+        
+    </div>
+   </div>
+  </body>
+
+  <script src="js/main.js"></script>
+</html>
