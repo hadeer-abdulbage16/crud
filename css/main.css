@@ -1,74 +1,133 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
+
 .dark {
-    background-color:black;
+    background-color: black;
     color: white;
 }
-.card-body{
-   background-color: rgba(68, 65, 65, 0.575);
-   margin: auto;
-   margin-bottom: 20px;
-   border: 2px darkcyan dashed;
-   align-items: center;
+.inputs  .valedition {
+ border: red 1px solid;
 }
-@media (max-width:770px){
-    h3{
-        font-size: 90px !important;
+.card-body {
+    background-color: rgba(68, 65, 65, 0.575);
+    margin: auto;
+    margin-bottom: 20px;
+    border: 2px darkcyan dashed;
+    align-items: center;
+}
+
+@media (max-width:900px) {
+    h3 {
+        font-size: 50px !important;
         
+         text-align: center;
     }
-    input{
-        
-        font-size: 60px !important;
+    .row{
+        display: block !important;
+       
     }
-    .card-body{
+
+    input {
+        width: 90%;
+        font-size: 40px !important;
+       margin: 5px;
+    }
+
+    .card-body {
         width: 100%;
-    } 
-    select{
+    }
+
+    select {
         height: 30% !important;
-        font-size: 60px !important;
+        font-size: 20px !important;
     }
-    #createmp{
+
+    #createmp {
         width: 100% !important;
-        font-size: 60px !important;
+        font-size: 30px !important;
+        margin: 15px;
+        text-align: center;
     }
-    h4{
-        font-size: 70px !important;
+
+    h4 {
+        font-size: 30px !important;
+        text-align: center;
     }
-    #clearall
-    {
-        font-size: 60px !important;
+
+    #clearall {
+        font-size: 15px !important;
     }
 }
-table{
+@media (max-width:400px) {
+    h3 {
+        font-size: 50px !important;
+         
+    }
+
+    input {
+
+        font-size: 30px !important;
+    }
+
+    .card-body {
+        width: 100%;
+    }
+
+    select {
+        height: 30% !important;
+        font-size: 10px !important;
+    }
+
+    #createmp {
+        width: 100% !important;
+        font-size: 40px !important;
+    }
+
+    h4 {
+        font-size: 40px !important;
+    }
+
+    #clearall {
+        font-size: 40px !important;
+    }
+}
+
+table {
     margin: auto;
 }
-table thead tr th{
+
+table thead tr th {
     padding: auto;
     text-align: center;
-      font-size: 24px;
-    text-transform:uppercase;
+    font-size: 24px;
+    text-transform: uppercase;
     color: darkcyan;
-   
+
 }
-tbody tr th{
+
+tbody tr th {
     text-align: center;
     padding-bottom: 8px;
 }
-.none{
+
+.none {
     display: none;
 }
-.emptytask{
+
+.emptytask {
     border: 2px red solid;
     color: red;
     margin-top: 10px;
 }
-.layout{
+
+.layout {
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     z-index: 162004;
     background-color: rgba(233, 168, 156, 0.4);
     display: flex;
@@ -76,47 +135,55 @@ tbody tr th{
     align-items: center;
     display: none;
 }
-.layout .card{
+
+.layout .card {
     background-color: black;
     width: 40%;
 }
-.layout .card-body{
+
+.layout .card-body {
     background-color: rgb(55, 52, 52);
     color: aliceblue;
     width: 90%;
     text-align: center;
-   
+
 }
-@media (max-width:770px){
-    table thead tr th{
-        padding: 20px;
+
+@media (max-width:900px) {
+    table thead tr th {
+        padding: 5px;
         text-align: center;
-          font-size: 50px;
-        text-transform:uppercase;
+        font-size: 25px;
+        text-transform: uppercase;
         color: darkcyan;
-       
+
     }
-    tbody tr th{
+
+    tbody tr th {
         text-align: center;
         padding-bottom: 8px;
-        font-size: 40px;
+        font-size: 20px;
     }
-    .layout .card{
-       height: 90%;
+
+    .layout .card {
+        height: 90%;
         width: 90%;
     }
-    .layout .card-body{
+
+    .layout .card-body {
         background-color: rgb(55, 52, 52);
         color: aliceblue;
         width: 100%;
         height: 90% !important;
         text-align: center;
-      
-    }  
-    .layout .card-body h6{
+        
+    }
+
+    .layout .card-body h6 {
         font-size: 60px;
-    } 
-    .layout .btn-close{
+    }
+
+    .layout .btn-close {
         font-size: 40px !important;
-    } 
+    }
 }

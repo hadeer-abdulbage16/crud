@@ -18,59 +18,33 @@ let layout = document.getElementById('layout');
 let mood = 'create';
 let tmp;
 // valedition data 
-let valedite = document.querySelectorAll('#span');
-let inputs = document.querySelectorAll('input');
+let inputs = document.querySelectorAll('.inputs input');
 let valeditionError = false;
-
-  
+let span = document.querySelectorAll('span');
 //-------------------------------------------------------
-// function to check validition in input 
-// function to check validition in string 
-let validitionString = () =>
-{
-  for( let i=0 ; i < inputs.length; i++)
-  {
-    if(inputs[i].value.length==0){
-      inputs[i].style.border=' solid 2px red';
-     valedite[i].classList.remove('none');
-     valeditionError= false;
-     
-    }else{
-      valedite[i].classList.add('none');
-      valeditionError=true;
-     
-    }
-  }
-
-} ;
-
-for( let i=0 ; i < inputs.length; i++)
-  {
-    if(inputs[i].value.length==0){
-      
-     valeditionError= false;
-     
-    }else{
-     
-      valeditionError=true;
-     
-    }
-    inputs[i].addEventListener('keyup',function(){
-      if(inputs[i].value.length==0){
-        inputs[i].style.border=' solid 2px red';
-       valedite[i].classList.remove('none');
-       valeditionError= false;
-       
-      }else{
-        valedite[i].classList.add('none');
-        valeditionError=true;
-        inputs[i].style.border=' solid 2px green';
+//function to check clean data 
+let valeditionempty = () => {
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value.length == 0) {
+      for (let m = 0; m < span.length; m++) {
+        span[m].style.display = 'block';
       }
-     
-    })
-    
+      // span[i].style.display='block';
+      //inputs[i].style.border='1px solid red';
+      inputs.forEach(input => input.style.border = '1px solid red')
+      valeditionError = true;
+    } else {
+      for (let m = 0; m < span.length; m++) {
+        span[m].style.display = 'none';
+      }
+      inputs.forEach(input => input.style.border = '1px solid green')
+      // inputs[i].classList.remove('valedition');
+      valeditionError = false;
+    }
   }
 
+}
+//valeditionempty();
 
 // funcion for get total
 function getTotal() {
@@ -90,7 +64,7 @@ let resetinput = () => {
   position.value = '';
   count.value = '';
   department.selectedIndex = 0;
-  //inputsalery.forEach(input => input = '')
+
   inputsalery.forEach(input => input.value = '');
 
 }
@@ -110,62 +84,7 @@ if (localStorage.myproudect == null) {
 } else {
   all_proudect = JSON.parse(localStorage.getItem('myproudect'));
 };
-/* 
-let all_proudect=localStorage.getItem('myproudect');
-if(all_proudect==null){
-  all_proudect=JSON.parse('all_proudect');
-}else{
-  all_proudect=[];
-};*/
 
-//fuction to creat object
-let creatObject = () => {
-  
-  let new_producet = {
-    employeName: employeName.value,
-    position: position.value,
-    gross: inputsalery[0].value,
-    tax: inputsalery[1].value,
-    tarncost: inputsalery[2].value,
-    bouns: inputsalery[3].value,
-    total: inputsalery[4].value,
-    count: count.value,
-    department: department.value
-  }
-  
-if(valeditionError=true)
- {
-  if (mood == 'create') {
-    if (count.value <= 0 || count.value == '') {
-      all_proudect.push(new_producet);
-    } else {
-      for (let i = 1; i <= count.value; i++) {
-        all_proudect.push(new_producet);
-      }
-    }
-  } else {
-    all_proudect[tmp] = new_producet;
-    mood = 'create';
-    btn.innerHTML = `Create NEW employe`
-    count.classList.remove('none');
-    localStorage.setItem('myproudect', JSON.stringify(all_proudect));
-
-    show_data();
-    checkempty();
-    resetinput();
-   
-
-  }
- }
- validitionString();
-  //all_proudect.push(new_producet);
-
- 
-}
-
-
-
-//----------------------------------------------
 //function to create elemant in table
 
 let show_data = () => {
@@ -191,10 +110,18 @@ let show_data = () => {
 show_data();
 
 
+
+
+
+
+//----------------------------------------------
+
+
+
 // function to check empty emplyee 
 
 let checkempty = () => {
-  if (tbody.childElementCount == 0 || localStorage.length == 0 || all_proudect.length == 0) {
+  if (tbody.childElementCount == 0 /*|| localStorage.length == 0 || all_proudect.length == 0*/) {
     emptytask.classList.remove('none');
     table.classList.add('none');
     clearAll.classList.add('none');
@@ -206,14 +133,63 @@ let checkempty = () => {
   }
 };
 checkempty();
-//function to clear all 
+
+//fuction to creat object
+
+
+let creatObject = () => {
+
+  let new_producet = {
+    employeName: employeName.value,
+    position: position.value,
+    gross: inputsalery[0].value,
+    tax: inputsalery[1].value,
+    tarncost: inputsalery[2].value,
+    bouns: inputsalery[3].value,
+    total: inputsalery[4].value,
+    count: count.value,
+    department: department.value
+  }
+  valeditionempty();
+
+   if(valeditionError==false){
+    if (mood == 'create') {
+      if (count.value <= 0 || count.value == '') {
+        all_proudect.push(new_producet);
+  
+      } else {
+        for (let i = 1; i <= count.value; i++) {
+          all_proudect.push(new_producet);
+  
+        }
+      }
+  
+    } else {
+      all_proudect[tmp] = new_producet;
+      mood = 'create';
+      btn.innerHTML = `Create NEW employe`
+      count.classList.remove('none');
+  
+    }
+    localStorage.setItem('myproudect', JSON.stringify(all_proudect));
+    show_data();
+    checkempty();
+    resetinput();
+  
+   }
+ 
+}
+
+btn.addEventListener('click', creatObject);
+
+
+
+//function to clear all item in a table 
 let clearall = () => {
   if (confirm('are yousure to deleete all item ')) {
     localStorage.clear();
     clearAll.classList.add('none');
-    // tbody.innerHTML+=``;
     all_proudect.splice(0);
-
     checkempty();
   } else {
     clearAll.classList.remove('none');
@@ -284,10 +260,4 @@ let upDate = (i) => {
     behavior: "smooth",
   })
 }
-// function to reset input 
-
-
-btn.addEventListener('click', creatObject);
-
-
 checkempty();
